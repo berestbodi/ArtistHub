@@ -1,0 +1,137 @@
+.sliderWrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.swiperContainer {
+  position: relative;
+  width: 100%;
+}
+
+.slideCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  color: #fff;
+  padding-bottom: 40px;
+}
+
+.comment {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  max-width: 100%;
+  font-style: italic;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.navBtn {
+  display: none;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-feedback {
+  width: 100%;
+  max-width: 280px;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  background: #764191;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-feedback:hover {
+  background: #8e52ad;
+  transform: translateY(-2px);
+}
+
+@media only screen and (min-width: 768px) {
+  .sliderWrapper {
+    padding: 80px 40px;
+    gap: 48px;
+  }
+
+  .comment {
+    font-size: 24px;
+    max-width: 85%;
+  }
+
+  .userName {
+    font-size: 16px;
+  }
+
+  .navBtn {
+    display: flex;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .navBtn:hover {
+    background: #764191;
+    border-color: #764191;
+  }
+
+  .prev {
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .sliderWrapper {
+    padding: 120px 0 0;
+    max-width: 1200px;
+  }
+
+  .comment {
+    font-size: 32px;
+    max-width: 70%;
+  }
+
+  .prev {
+    left: -60px;
+  }
+  .next {
+    right: -60px;
+  }
+
+  .btn-feedback {
+    width: auto;
+    padding: 16px 40px;
+  }
+}

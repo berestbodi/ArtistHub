@@ -1,0 +1,112 @@
+.title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.rating-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rating-wrapper label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.userName,
+.content {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+  background: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.userName:focus,
+.content:focus {
+  border-color: #764191;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: -4px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  background: #764191;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(118, 65, 145, 0.3);
+}
+
+.btn:hover {
+  background: #8e52ad;
+  transform: translateY(-1px);
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    font-size: 40px;
+    margin-bottom: 32px;
+  }
+
+  .userName,
+  .content {
+    padding: 14px 16px;
+  }
+
+  .btn {
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .title {
+    font-size: 60px;
+    margin-bottom: 48px;
+  }
+
+  .userName,
+  .content {
+    min-width: 600px;
+  }
+}
