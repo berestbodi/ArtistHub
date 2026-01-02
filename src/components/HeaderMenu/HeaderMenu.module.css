@@ -1,6 +1,7 @@
 @media only screen and (min-width: 320px) {
   .header-list {
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
     gap: 32px;
@@ -12,26 +13,7 @@
   }
 
   .header-links:hover,
-  .header-links:focus,
-  .burger-icon:hover,
-  .burger-icon:focus {
+  .header-links:focus {
     color: #764191;
-  }
-
-  .header-links::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #764191;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 250ms ease-in-out;
-  }
-
-  .header-links:hover::after {
-    transform: scaleX(1);
   }
 }
