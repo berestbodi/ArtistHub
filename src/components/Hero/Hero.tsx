@@ -23,51 +23,53 @@ export default function Hero({ artists }: HeroProps) {
 
   return (
     <div className={css["hero-section"]} id="hero">
-      <div className={css["hero-content"]}>
-        <h1 className={css["hero-title"]}>
-          Discover Your Next Favorite Artist Today
-        </h1>
+      <div className={css["container"]}>
+        <div className={css["hero-content"]}>
+          <h1 className={css["hero-title"]}>
+            Discover Your Next Favorite Artist Today
+          </h1>
 
-        <p className={css["hero-text"]}>
-          Dive into a world of music discoveries with ArtistsHub – your personal
-          guide to the boundless universe of sound. Explore, filter, and learn
-          about your favorite artists all in one place.
-        </p>
+          <p className={css["hero-text"]}>
+            Dive into a world of music discoveries with ArtistsHub – your
+            personal guide to the boundless universe of sound. Explore, filter,
+            and learn about your favorite artists all in one place.
+          </p>
 
-        <a
-          className={css["hero-link"]}
-          href="#gallery-start"
-          onClick={handleScroll}
-        >
-          Explore Artists
-          <MdOutlinePlayArrow className={css["hero-link-arrow"]} />
-        </a>
-      </div>
+          <a
+            className={css["hero-link"]}
+            href="#gallery-start"
+            onClick={handleScroll}
+          >
+            Explore Artists
+            <MdOutlinePlayArrow className={css["hero-link-arrow"]} />
+          </a>
+        </div>
 
-      <div className={css["hero-images"]}>
-        <div className={css["hero-images-row"]}>
-          <div className={css["col-left"]}>
-            {[...artists.slice(0, 5), ...artists.slice(0, 5)].map(
-              (artist, i) => (
+        <div className={css["hero-images"]}>
+          <div className={css["hero-images-row"]}>
+            <div className={css["col-left"]}>
+              {[...artists.slice(0, 5), ...artists.slice(0, 5)].map(
+                (artist, i) => (
+                  <img
+                    className={css["hero-img"]}
+                    key={`left-${artist._id}-${i}`}
+                    src={artist.strArtistThumb}
+                    alt={artist.strArtist}
+                  />
+                )
+              )}
+            </div>
+
+            <div className={css["col-right"]}>
+              {[...artists.slice(5), ...artists.slice(5)].map((artist, i) => (
                 <img
                   className={css["hero-img"]}
-                  key={`left-${artist._id}-${i}`}
+                  key={`right-${artist._id}-${i}`}
                   src={artist.strArtistThumb}
                   alt={artist.strArtist}
                 />
-              )
-            )}
-          </div>
-
-          <div className={css["col-right"]}>
-            {[...artists.slice(5), ...artists.slice(5)].map((artist, i) => (
-              <img
-                className={css["hero-img"]}
-                key={`right-${artist._id}-${i}`}
-                src={artist.strArtistThumb}
-                alt={artist.strArtist}
-              />
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
