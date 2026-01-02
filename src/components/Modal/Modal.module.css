@@ -12,6 +12,8 @@
   backdrop-filter: blur(5px);
   padding: 20px;
   box-sizing: border-box;
+
+  animation: fadeIn 0.3s ease-out;
 }
 
 .modal-window {
@@ -27,6 +29,28 @@
 
   scrollbar-width: none;
   -ms-overflow-style: none;
+
+  animation: modalAppear 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .modal-window::-webkit-scrollbar {

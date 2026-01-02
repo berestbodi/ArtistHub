@@ -116,8 +116,6 @@
   margin-bottom: 12px;
 }
 
-/* --- СЕКЦІЯ АРТИСТА (ВЕРХНЯ ЧАСТИНА) --- */
-
 .actor-name {
   font-weight: 700;
   margin-bottom: 32px;
@@ -198,8 +196,6 @@
   color: #fff;
 }
 
-/* --- СЕКЦІЯ АЛЬБОМІВ --- */
-
 .albums {
   display: flex;
   flex-direction: column;
@@ -218,7 +214,7 @@
 
 .albums-cards {
   display: grid;
-  grid-template-columns: 1fr; /* 1 колонка для мобільних */
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
@@ -237,8 +233,6 @@
   margin-bottom: 12px;
   color: #fff;
 }
-
-/* --- ТВОЇ ВАЖЛИВІ СТИЛІ ТАБЛИЦІ (БЕЗ ЗМІН) --- */
 
 .table-header {
   border-radius: 8px;
@@ -275,7 +269,6 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Елементи всередині треку */
 .ytb-icon {
   font-size: 18px;
   color: #fff;
@@ -292,9 +285,6 @@
   justify-content: center;
 }
 
-/* --- МЕДІА ЗАПИТИ (АДАПТИВ) --- */
-
-/* Планшет (768px+) */
 @media only screen and (min-width: 768px) {
   .actor {
     display: grid;
@@ -312,7 +302,6 @@
   }
 }
 
-/* Десктоп (1440px+) */
 @media only screen and (min-width: 1440px) {
   .actor-name {
     font-size: 60px;

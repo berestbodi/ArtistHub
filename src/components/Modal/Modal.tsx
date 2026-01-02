@@ -22,12 +22,10 @@ export default function Modal({ onClose, children }: ModalProps) {
     window.addEventListener("keydown", handleKeyDown);
 
     document.body.classList.add("modal-open");
-    document.documentElement.classList.add("modal-open");
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.classList.remove("modal-open");
-      document.documentElement.classList.remove("modal-open");
     };
   }, [onClose]);
 

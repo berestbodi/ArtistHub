@@ -1,12 +1,16 @@
 .three-body {
   --uib-size: 50px;
   --uib-speed: 0.8s;
-  --uib-color: #5d3fd3;
+  --uib-color: #764191;
+
   position: fixed;
   top: 50%;
   left: 50%;
+
+  margin-top: calc(var(--uib-size) / -2);
+  margin-left: calc(var(--uib-size) / -2);
+
   z-index: 999;
-  transform: translate(-50%, -50%);
   display: inline-block;
   height: var(--uib-size);
   width: var(--uib-size);
