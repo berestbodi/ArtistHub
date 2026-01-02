@@ -48,7 +48,7 @@ export default function SearchBox({
 
   const debounced = useDebouncedCallback((value: string) => {
     setState(value, 1);
-  }, 500);
+  }, 100);
 
   const { data } = useQuery<Genres[]>({
     queryKey: ["genres"],
@@ -92,9 +92,11 @@ export default function SearchBox({
         <input
           className={css.input}
           type="text"
-          defaultValue={query}
+          value={query}
           placeholder="Search artists..."
-          onChange={(e) => debounced(e.target.value)}
+          onChange={(e) => {
+            debounced(e.target.value);
+          }}
         />
       </label>
 

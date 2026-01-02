@@ -66,11 +66,12 @@
   color: #fff;
   font-weight: 500;
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .hero-link:hover {
-  opacity: 0.9;
+  background: #8e52ad;
+  transform: translateY(-2px);
 }
 
 .hero-images {

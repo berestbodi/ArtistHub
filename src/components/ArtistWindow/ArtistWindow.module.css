@@ -103,7 +103,9 @@
 .album-card {
   border-radius: 16px;
   padding: 14px 11px;
-  min-width: 272px;
+  min-width: 0 !important;
+  width: 100%;
+  box-sizing: border-box;
   background: #1e1c1f;
 }
 
@@ -113,6 +115,130 @@
   line-height: 1.5;
   margin-bottom: 12px;
 }
+
+/* --- СЕКЦІЯ АРТИСТА (ВЕРХНЯ ЧАСТИНА) --- */
+
+.actor-name {
+  font-weight: 700;
+  margin-bottom: 32px;
+  font-size: 32px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #fff;
+}
+
+.actor {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.actor-img {
+  border-radius: 16px;
+  width: 100%;
+  height: 402px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.actor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.actor-info-container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.actor-info-thumb {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.actor-info-thumb h2 {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 4px;
+}
+
+.actor-biography h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.actor-biography p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.actor-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gallery-genre {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* --- СЕКЦІЯ АЛЬБОМІВ --- */
+
+.albums {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 60px;
+}
+
+.albums h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.albums-cards {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 колонка для мобільних */
+  gap: 24px;
+}
+
+.album-card {
+  border-radius: 16px;
+  padding: 14px 11px;
+  background: #1e1c1f;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.album-card h3 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+/* --- ТВОЇ ВАЖЛИВІ СТИЛІ ТАБЛИЦІ (БЕЗ ЗМІН) --- */
 
 .table-header {
   border-radius: 8px;
@@ -124,6 +250,7 @@
   font-weight: 600;
   font-size: 8px;
   line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .track-list {
@@ -141,8 +268,67 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
+  color: #fff;
 }
 
 .track-list li:nth-child(2n) {
   background: rgba(255, 255, 255, 0.1);
+}
+
+/* Елементи всередині треку */
+.ytb-icon {
+  font-size: 18px;
+  color: #fff;
+  transition: color 200ms ease-in-out;
+}
+
+.ytb-icon:hover {
+  color: #764191;
+}
+
+.track a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- МЕДІА ЗАПИТИ (АДАПТИВ) --- */
+
+/* Планшет (768px+) */
+@media only screen and (min-width: 768px) {
+  .actor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .actor-name {
+    font-size: 48px;
+    margin-bottom: 48px;
+  }
+
+  .albums-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Десктоп (1440px+) */
+@media only screen and (min-width: 1440px) {
+  .actor-name {
+    font-size: 60px;
+    text-align: left;
+  }
+
+  .actor {
+    gap: 64px;
+  }
+
+  .albums-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .album-card {
+    min-width: 272px;
+  }
 }

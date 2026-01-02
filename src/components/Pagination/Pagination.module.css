@@ -21,6 +21,20 @@
   min-width: 35px;
   height: 35px;
   padding: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pagination li:not(.active):hover {
+  background: rgba(118, 65, 145, 0.2);
+  border-color: #764191;
+  transform: translateY(-2px);
+}
+
+.pagination li:not(.active):focus-within {
+  outline: 2px solid #764191;
+  outline-offset: 2px;
+  background: rgba(118, 65, 145, 0.1);
 }
 
 .pagination a {
@@ -31,6 +45,8 @@
   height: 100%;
   font-weight: 500;
   font-size: 14px;
+  outline: none;
+  color: inherit;
 }
 
 .prevItem,
@@ -40,7 +56,21 @@
 
 .active {
   background: #764191 !important;
+  border-color: #764191 !important;
   box-shadow: 0 0 10px rgba(118, 65, 145, 0.5);
+  cursor: default;
+}
+
+.pagination li[class*="break"] {
+  cursor: default;
+  background: transparent;
+  border: none;
+}
+
+.pagination li[class*="break"]:hover {
+  transform: none;
+  background: transparent;
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {
