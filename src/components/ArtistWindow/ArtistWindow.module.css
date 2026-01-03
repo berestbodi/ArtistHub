@@ -68,9 +68,6 @@
 .track {
   color: #fff;
   font-size: 18px;
-}
-
-.track a {
   display: flex;
   align-items: center;
 }

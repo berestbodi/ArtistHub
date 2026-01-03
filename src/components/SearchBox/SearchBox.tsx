@@ -106,7 +106,9 @@ export default function SearchBox({
           onClick={() => setIsOpenSort(!isOpenSort)}
         >
           <span>{selectedSort}</span>
-          <IoIosArrowUp className={isOpenSort ? css.rotate : ""} />
+          <IoIosArrowUp
+            className={`${css["icon-arrow"]} ${isOpenSort ? css.rotate : ""}`}
+          />
         </div>
         {isOpenSort && (
           <ul className={css.dropdownList}>
@@ -123,7 +125,9 @@ export default function SearchBox({
           onClick={() => setIsOpenGenres(!isOpenGenres)}
         >
           <span>{selectedGenreName}</span>
-          <IoIosArrowUp className={isOpenGenres ? css.rotate : ""} />
+          <IoIosArrowUp
+            className={`${css["icon-arrow"]} ${isOpenGenres ? css.rotate : ""}`}
+          />
         </div>
         {isOpenGenres && (
           <ul className={css.dropdownList}>

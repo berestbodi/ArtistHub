@@ -22,7 +22,6 @@
   transition: all 0.3s ease;
 }
 
-/* Ефект фокусу для пошуку та дропдаунів */
 .labelQuery:focus-within,
 .dropdownHeader:hover {
   border-color: #764191;
@@ -67,29 +66,26 @@
   cursor: pointer;
 }
 
-/* --- СТИЛІЗАЦІЯ СПИСКУ ТА СКРОЛБАРУ --- */
 .dropdownList {
   position: absolute;
-  top: calc(100% + 8px); /* Трохи збільшив відступ */
+  top: calc(100% + 8px);
   left: 0;
   width: 100%;
   background: #1a1a1a;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   list-style: none;
-  padding: 8px 4px 8px 0; /* Відступ справа для скролбару */
+  padding: 8px 4px 8px 0;
   margin: 0;
   z-index: 1000;
   max-height: 250px;
   overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
-  /* Firefox */
   scrollbar-width: thin;
   scrollbar-color: rgba(118, 65, 145, 0.5) rgba(255, 255, 255, 0.05);
 }
 
-/* Chrome, Safari, Edge скролбар */
 .dropdownList::-webkit-scrollbar {
   width: 6px;
 }
@@ -124,14 +120,21 @@
   color: #fff;
 }
 
-/* --- КНОПКА RESET --- */
+.icon-arrow {
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
 .reset-btn {
   height: 48px;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   color: #fff;
-  text-decoration: none; /* Прибрав лінію, додав transition */
+  text-decoration: none;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -143,7 +146,6 @@
   background: rgba(118, 65, 145, 0.05);
 }
 
-/* --- МЕДІА ЗАПИТИ --- */
 @media only screen and (min-width: 768px) {
   .container {
     flex-direction: row;
