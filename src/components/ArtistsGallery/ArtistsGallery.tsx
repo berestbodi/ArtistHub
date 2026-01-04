@@ -1,5 +1,6 @@
 import type { ArtistItem } from "../../services/fetch-artist";
 import css from "./ArtistsGallery.module.css";
+import { IoMdArrowDropright } from "react-icons/io";
 
 interface ArtistsGalleryProps {
   artists: ArtistItem[];
@@ -49,6 +50,10 @@ export default function ArtistsGallery({
               {artist.strBiographyEN
                 ? artist.strBiographyEN.slice(0, 150) + "..."
                 : "No biography available."}
+            </p>
+
+            <p className={css["text-more"]}>
+              Learn More <IoMdArrowDropright className={css["arrow"]} />
             </p>
           </li>
         ))}

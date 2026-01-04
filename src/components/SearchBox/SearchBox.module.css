@@ -75,15 +75,24 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   list-style: none;
-  padding: 8px 4px 8px 0;
+  padding: 8px 0;
   margin: 0;
   z-index: 1000;
   max-height: 250px;
   overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   scrollbar-width: thin;
   scrollbar-color: rgba(118, 65, 145, 0.5) rgba(255, 255, 255, 0.05);
+}
+
+.openList {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .dropdownList::-webkit-scrollbar {
@@ -112,7 +121,7 @@
   font-size: 14px;
   border-radius: 8px;
   margin: 0 4px;
-  transition: all 0.2s ease;
+  transition: background 200ms ease;
 }
 
 .dropdownList li:hover {
@@ -121,7 +130,7 @@
 }
 
 .icon-arrow {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 200ms ease-in-out;
 }
 
 .rotate {

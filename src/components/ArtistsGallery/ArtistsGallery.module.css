@@ -71,10 +71,19 @@
   font-size: 20px;
 }
 
-.text {
+.text,
+.text-more {
   padding: 0 16px;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.text-more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 @media only screen and (min-width: 768px) {

@@ -1,6 +1,6 @@
 import type { ArtistItem } from "../../services/fetch-artist";
 import css from "./Hero.module.css";
-import { MdOutlinePlayArrow } from "react-icons/md";
+import { IoMdArrowDropright } from "react-icons/io";
 
 interface HeroProps {
   artists: ArtistItem[];
@@ -41,7 +41,7 @@ export default function Hero({ artists }: HeroProps) {
             onClick={handleScroll}
           >
             Explore Artists
-            <MdOutlinePlayArrow className={css["hero-link-arrow"]} />
+            <IoMdArrowDropright className={css["hero-link-arrow"]} />
           </a>
         </div>
 

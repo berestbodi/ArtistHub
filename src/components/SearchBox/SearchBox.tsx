@@ -110,13 +110,11 @@ export default function SearchBox({
             className={`${css["icon-arrow"]} ${isOpenSort ? css.rotate : ""}`}
           />
         </div>
-        {isOpenSort && (
-          <ul className={css.dropdownList}>
-            <li onClick={() => handleSelectedSort("default")}>Default</li>
-            <li onClick={() => handleSelectedSort("asc")}>a -{">"} z</li>
-            <li onClick={() => handleSelectedSort("desc")}>z -{">"} a</li>
-          </ul>
-        )}
+        <ul className={`${css.dropdownList} ${isOpenSort ? css.openList : ""}`}>
+          <li onClick={() => handleSelectedSort("default")}>Default</li>
+          <li onClick={() => handleSelectedSort("asc")}>a -{">"} z</li>
+          <li onClick={() => handleSelectedSort("desc")}>z -{">"} a</li>
+        </ul>
       </div>
 
       <div className={css.dropdownWrapper} ref={genreRef}>
@@ -129,21 +127,21 @@ export default function SearchBox({
             className={`${css["icon-arrow"]} ${isOpenGenres ? css.rotate : ""}`}
           />
         </div>
-        {isOpenGenres && (
-          <ul className={css.dropdownList}>
-            <li onClick={() => handleSelectGenre("All Genres")}>All Genres</li>
-            {data &&
-              Array.isArray(data) &&
-              data.map((genre) => (
-                <li
-                  key={genre._id}
-                  onClick={() => handleSelectGenre(genre.genre)}
-                >
-                  {genre.genre}
-                </li>
-              ))}
-          </ul>
-        )}
+        <ul
+          className={`${css.dropdownList} ${isOpenGenres ? css.openList : ""}`}
+        >
+          <li onClick={() => handleSelectGenre("All Genres")}>All Genres</li>
+          {data &&
+            Array.isArray(data) &&
+            data.map((genre) => (
+              <li
+                key={genre._id}
+                onClick={() => handleSelectGenre(genre.genre)}
+              >
+                {genre.genre}
+              </li>
+            ))}
+        </ul>
       </div>
 
       <button className={css["reset-btn"]} onClick={handleReset}>
