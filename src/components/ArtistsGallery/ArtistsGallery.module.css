@@ -71,8 +71,7 @@
   font-size: 20px;
 }
 
-.text,
-.text-more {
+.text {
   padding: 0 16px;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
@@ -81,9 +80,24 @@
 .text-more {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  font-size: 18px;
-  font-weight: 700;
+  margin: 0 16px;
+  height: 48px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.text-more:hover {
+  border-color: #764191;
+  color: #764191;
+  background: rgba(118, 65, 145, 0.05);
 }
 
 @media only screen and (min-width: 768px) {
@@ -103,6 +117,10 @@
 
   .gallery-img {
     height: 300px;
+  }
+
+  .text-more {
+    width: 150px;
   }
 }
 
