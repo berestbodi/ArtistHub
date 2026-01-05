@@ -29,6 +29,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+  padding-bottom: 24px;
 }
 
 .gallery-item {
@@ -113,6 +114,7 @@
   .gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    padding-bottom: 32px;
   }
 
   .gallery-img {

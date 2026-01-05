@@ -1,11 +1,25 @@
 import css from "./ArtistWindow.module.css";
 import { FaYoutube } from "react-icons/fa";
 import type { Albums } from "../../services/fetch-artist-by-id";
+import Pagination from "../Pagination/Pagination";
+import { useState } from "react";
 interface ArtistWindowProps {
   artistInfo: Albums;
 }
 
 export default function ArtistWindow({ artistInfo }: ArtistWindowProps) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
+
+  const totalAlbums = artistInfo?.albumsList?.length || 0;
+  const pageCount = Math.ceil(totalAlbums / itemsPerPage);
+
+  const indexOfLastAlbum = currentPage * itemsPerPage;
+  const indexOfFirstAlbum = indexOfLastAlbum - itemsPerPage;
+
+  const currentAlbums =
+    artistInfo?.albumsList?.slice(indexOfFirstAlbum, indexOfLastAlbum) || [];
+
   return (
     <>
       <h1 className={css["actor-name"]}>{artistInfo.strArtist}</h1>
@@ -70,10 +84,10 @@ export default function ArtistWindow({ artistInfo }: ArtistWindowProps) {
       </div>
 
       <div className={css["albums"]}>
-        <h2>Albums</h2>
-        <div className={css["albums-cards"]} id="albums-container">
-          {artistInfo?.albumsList?.length > 0 &&
-            artistInfo.albumsList.slice(0, 8).map((album) => (
+        <h2 id="albums-container">Albums</h2>
+        <div className={css["albums-cards"]}>
+          {currentAlbums.length > 0 &&
+            currentAlbums.map((album) => (
               <div className={css["album-card"]} key={album._id}>
                 <h3>{album.strAlbum}</h3>
                 <div className={css["table-header"]}>
@@ -92,7 +106,11 @@ export default function ArtistWindow({ artistInfo }: ArtistWindowProps) {
                       </span>
                       {track.movie && (
                         <span className={css["track"]}>
-                          <a href={track.movie}>
+                          <a
+                            href={track.movie}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
                             <FaYoutube className={css["ytb-icon"]} />
                           </a>
                         </span>
@@ -103,6 +121,13 @@ export default function ArtistWindow({ artistInfo }: ArtistWindowProps) {
               </div>
             ))}
         </div>
+
+        <Pagination
+          page={currentPage}
+          pageCount={pageCount}
+          setPage={setCurrentPage}
+          scrollTargetId="albums-container"
+        />
       </div>
     </>
   );

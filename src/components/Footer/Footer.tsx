@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className={css["footer"]}>
       <div className={css["nav-container"]}>
-        <a href="#hero" className={css["nav-main-link"]}>
+        <a href="/" className={css["nav-main-link"]}>
           ArtistHub
         </a>
         <ul className={css["nav-list"]}>

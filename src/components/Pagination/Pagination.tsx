@@ -7,12 +7,14 @@ interface PaginationProps {
   page: number;
   pageCount: number;
   setPage: (page: number) => void;
+  scrollTargetId?: string;
 }
 
 export default function Pagination({
   page,
   pageCount,
   setPage,
+  scrollTargetId,
 }: PaginationProps) {
   const [pageRange, setPageRange] = useState(window.innerWidth < 768 ? 1 : 3);
 
@@ -35,9 +37,11 @@ export default function Pagination({
       marginPagesDisplayed={1}
       onPageChange={({ selected }) => {
         setPage(selected + 1);
-        const element = document.getElementById("gallery-start");
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+        if (scrollTargetId) {
+          const element = document.getElementById(scrollTargetId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         }
       }}
       containerClassName={css.pagination}

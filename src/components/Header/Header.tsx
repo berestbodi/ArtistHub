@@ -10,7 +10,7 @@ export default function Header({ openModal }: Props) {
     <div>
       <nav className={css["header"]}>
         <div className={css["header-logo-container"]}>
-          <a className={css["header-links"]} href="#hero">
+          <a className={css["header-links"]} href="/">
             ArtistHub
           </a>
         </div>

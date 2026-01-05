@@ -42,6 +42,5 @@ export default async function fetchArtistById(
       limit: limit,
     },
   });
-
   return response.data;
 }

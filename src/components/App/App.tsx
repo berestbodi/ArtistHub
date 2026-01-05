@@ -128,6 +128,7 @@ export default function App() {
           pageCount={pageCount}
           page={currentPage}
           setPage={setCurrentPage}
+          scrollTargetId="gallery-start"
         />
       )}
 
