@@ -202,6 +202,10 @@
     height: 900px;
   }
 
+  .hero-images-row {
+    justify-content: end;
+  }
+
   .hero-img {
     width: 300px;
     height: 350px;
