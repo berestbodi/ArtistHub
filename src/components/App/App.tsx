@@ -68,6 +68,7 @@ export default function App() {
         backgroundColor: "#060310",
         padding: "16px",
         color: "#fff",
+        zIndex: 100000000,
       },
     });
   };
@@ -80,6 +81,7 @@ export default function App() {
           backgroundColor: "#060310",
           padding: "16px",
           color: "#fff",
+          zIndex: 100000000,
         },
       });
     }
@@ -118,6 +120,9 @@ export default function App() {
 
       <Toaster
         position="top-center"
+        containerStyle={{
+          zIndex: 99999999999,
+        }}
         toastOptions={{
           className: "my-custom-toast",
         }}
@@ -158,8 +163,8 @@ export default function App() {
         <Modal onClose={() => setFeedbackModalOpen(false)}>
           <FeedbackModal
             onClose={() => {
-              setFeedbackModalOpen(false);
               feedbackToast();
+              setFeedbackModalOpen(false);
             }}
           />
         </Modal>
