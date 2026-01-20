@@ -43,7 +43,7 @@ Built using the latest industry standards to ensure high performance and maintai
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/your-username/artistshub.git
+git clone https://github.com/berestbodi/ArtistHub.git
 
 ```
 
