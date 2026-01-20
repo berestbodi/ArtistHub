@@ -10,6 +10,8 @@
 
 Built using the latest industry standards to ensure high performance and maintainability:
 
+| Category | Tools & Technologies |
+| --- | --- |
 | **Core Framework** | **React 19** ⚛️, **TypeScript** 🟦, **Vite** ⚡ |
 | **Data & State** | **TanStack Query (v5)** 🔄, **Axios** 📡 |
 | **Forms & Auth** | **Formik** 📝 + **Yup** ✅ |
@@ -43,7 +45,7 @@ Built using the latest industry standards to ensure high performance and maintai
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/berestbodi/ArtistHub.git
+git clone https://github.com/your-username/artistshub.git
 
 ```
 
@@ -60,6 +62,9 @@ npm install
 npm run dev
 
 ```
+
+
+---
 
 > Feel free to ⭐ this repository if you find it helpful!
 
